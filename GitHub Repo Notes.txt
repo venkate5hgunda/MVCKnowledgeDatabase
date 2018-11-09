@@ -1,0 +1,20 @@
+Routing:
+
+    URL Routing Module:
+        Request is handed over to Routing Module by IIS (Internet Information Server) which analyses the request looks up for the Routing Table to figure out the controller it maps to and also action mapping.
+        Routing Table is a Static Container of Routes defined in ASP.NET applications of corresponsing controllers and actions mapping.
+
+    MVC Route Handler:
+        If the route is found in the Routing table, this route handler is executed and an instance of MVC HttpHandler is given as an output.
+
+    MVC Http Handler:
+        Http Handler has the controller and action mapping information.
+        It triggers the specified action in the given controller.
+        It also passes any query string present in the URL to the Controller/Action.
+
+    Together, MVC Route Handler and MVC Http Handler act as gateway of MVC Framework.
+    MVC Handler begins the initialization and execution of the controller.
+    MVC Http Handler converts the route data and converts them into a concrete controller.
+    It is capable of serving the request.
+
+ 
