@@ -43,7 +43,21 @@ This contains logic for a bunch of navigation-specific action-creators
 _/containers_
 
 This is the where we connect our navigation logic to the application state — using  `**mapStateToProps**`  and  `**mapDispatchToProps**`
+
+The entry point of this module is the `**index.js**` file
+
+This entry point navigator files serves as the root navigator for the whole application, and is what is imported in the  `**/containers/index.js**`  file in the previous section.
+
+It aggregates all of the navigators for various scenes in the application and links them up to their entry routes. Besides aggregation, it also routes to individual scenes when appropriate
+
+You can have several scene-based navigators as required by your application. what’s key is to import them into the parent navigator and connect to the appropriate route.
+
+_/reducers_
+
+Because our app’s navigation data now takes a slice of the application state, we would need a reducer to properly update this sliced based on triggered actions. Compared to other reducers in our app, this has a specialised implementation for both initial state and the reducer function:
+
+[https://gist.github.com/anosikeosifo/f0df960c177dfb57c4f7ed5e4557704c](https://gist.github.com/anosikeosifo/f0df960c177dfb57c4f7ed5e4557704c)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMyODAzMjQ5Nyw4MjcxNTI1NzEsLTMwNz
+eyJoaXN0b3J5IjpbLTE0MTYzMTE3Niw4MjcxNTI1NzEsLTMwNz
 k1OTE2OV19
 -->
